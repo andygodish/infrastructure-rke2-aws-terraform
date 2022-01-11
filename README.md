@@ -20,5 +20,4 @@ alias k=kubectl
 
 # retrieve kubeconfig
 
-scp rke2-init-server:/tmp/k3s.yaml ~/.kube/config
-```# infrastructure-rke2-aws-terraform
+scp rke2-init-server:/tmp/rke2.yaml ~/.kube/config
