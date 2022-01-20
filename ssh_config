@@ -4,11 +4,11 @@ Host rke2-init-server
   IdentityFile ~/.ssh/rancher-laptop
 
 Host rke2-server-0
-  Hostname 160.1.42.211
+  Hostname 52.61.83.158
   User ubuntu
   IdentityFile ~/.ssh/rancher-laptop
 
 Host rke2-server-1 
-  Hostname 15.205.132.92
+  Hostname 15.205.210.64
   User ubuntu
   IdentityFile ~/.ssh/rancher-laptop

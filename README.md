@@ -21,3 +21,5 @@ alias k=kubectl
 # retrieve kubeconfig
 
 scp rke2-init-server:/tmp/rke2.yaml ~/.kube/config
+
+
