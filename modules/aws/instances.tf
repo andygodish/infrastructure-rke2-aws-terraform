@@ -234,6 +234,13 @@ resource "aws_elb" "rke2_cp_elb" {
     lb_protocol       = "tcp"
   }
 
+  listener {
+    instance_port     = 9345
+    instance_protocol = "tcp"
+    lb_port           = 9345
+    lb_protocol       = "tcp"
+  }
+
   health_check {
     healthy_threshold   = 2
     unhealthy_threshold = 2

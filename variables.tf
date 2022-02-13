@@ -16,6 +16,10 @@ variable "amis" {
         ami  = "ami-0ac4e06a69870e5be"
         user = "ec2-user"
       }
+      "rhel84" = {
+        ami = "ami-05a05d4be0adad623"
+        user= "ec2-user" 
+      }
       "rhel7" = {
         ami  = "ami-e9d5ec88"
         user = "ec2-user"
