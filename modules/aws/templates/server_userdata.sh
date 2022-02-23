@@ -6,11 +6,15 @@
 export CP_LB_HOST="${cp_lb_host}" # Needed to pick up in heredoc
 export RKE2_TOKEN="${rke2_token}"
 export SERVER_IP="${server_ip}"
+export RKE2_NODE_NAME="$(hostname).us-gov-west-1.compute.internal"
+
+hostnamectl set-hostname $RKE2_NODE_NAME 
 
 mkdir -p /etc/rancher/rke2
 
 cat << EOF > /etc/rancher/rke2/config.yaml
 server: https://$CP_LB_HOST:9345
+node-name: server-$RKE2_NODE_NAME
 token: $RKE2_TOKEN
 tls-san:
 - $CP_LB_HOST
@@ -18,9 +22,9 @@ EOF
 
 # curl -sfL https://get.rke2.io | sh -
 # curl -sfL https://get.rke2.io | INSTALL_RKE2_VERSION=v1.19.16+rke2r1 sh -
-# curl -sfL https://get.rke2.io | INSTALL_RKE2_VERSION=v1.20.12+rke2r1 sh -
+curl -sfL https://get.rke2.io | INSTALL_RKE2_VERSION=v1.20.12+rke2r1 sh -
 # curl -sfL https://get.rke2.io | INSTALL_RKE2_VERSION=v1.21.7+rke2r2 sh -
-curl -sfL https://get.rke2.io | INSTALL_RKE2_CHANNEL=v1.18 sh -
+# curl -sfL https://get.rke2.io | INSTALL_RKE2_CHANNEL=v1.18 sh -
 
 sleep 300
 
