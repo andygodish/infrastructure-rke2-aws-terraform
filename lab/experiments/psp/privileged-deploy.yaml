@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: privileged-deploy
+  name: privileged-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: privileged-deploy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: privileged-deploy
+    spec:
+      containers:
+      - image: alpine
+        name: alpine
+        resources: {}
+        stdin: true
+        tty: true
+        securityContext: 
+          privileged: true
+      hostPID: true
+      hostNetwork: true
+status: {}
+
